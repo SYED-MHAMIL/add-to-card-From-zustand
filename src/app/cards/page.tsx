@@ -11,7 +11,7 @@ export default function Cards(){
    const cards=useAddCard((state)=>state.cards);
    console.log(Object.keys(cards));
 
-   let values = Object.values(cards);
+   const values = Object.values(cards);
    console.log(values);
    
    let grandTotalPrice = values.reduce(

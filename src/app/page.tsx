@@ -14,7 +14,7 @@ export default function Home() {
 
 
 let grandTotalPrice;
-let values = Object.values(cards);
+const values = Object.values(cards);
    console.log(values);
 if(values.length > 0){   
    grandTotalPrice = values.reduce(
@@ -29,7 +29,7 @@ const add = (product) => {
   if ([product.id] in cards) {
     cards[product.id].quantity = cards[product.id].quantity  + 1;
   } else {
-    // const newItem = { ...product};
+  
     cards[product.id] = product;
   }
   addToCard(cards);
@@ -45,7 +45,7 @@ const add = (product) => {
 let quanVal;
 if(values){
 
-let quan= (Object.values(cards).map(({quantity})=>quantity ).join("+"));
+const quan= (Object.values(cards).map(({quantity})=>quantity ).join("+"));
 quanVal=eval(quan)
 console.log(quanVal);
 
