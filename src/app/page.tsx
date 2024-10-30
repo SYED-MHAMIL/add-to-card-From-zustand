@@ -1,18 +1,14 @@
 "use client";
 
-import NavBar from "@/component/navBar";
+
 import { useAddCard } from "./store/addCard-store";
-import { addDoc, collection, doc, DocumentData, onSnapshot, query, updateDoc, where } from "firebase/firestore";
-import { db } from "@/firebase/config";
-import { useEffect, useState } from "react";
+
+
 import Link from "next/link";
-import Cards from "./cards/page";
 
 export default function Home() {
   const { products, addToCard, cards, increment, decrement } = useAddCard();
-  const  [isDisabled,setIsDisabled]=useState(false);
-  const  [cardsData,setCardsData]=useState<DocumentData[]>([]);
-  const  [documentId,setDocumentId]=useState('');
+ 
 
      
 
@@ -45,20 +41,7 @@ const add = (product) => {
     }
   };
 
-  // let grandTotalPrice;
-// let valuesQuan = Object.values(cards);
-//   console.log(valuesQuan);
   
-//  let grandTotalQuan;
-//  console.log(grandTotalQuan);
- 
-// if(valuesQuan.length > 0){   
-//    grandTotalQuan = valuesQuan.map(
-//      ( { quantity }) => quantity 
-//    );
-
-// }
-
 let quanVal;
 if(values){
 
@@ -198,19 +181,12 @@ console.log(quanVal);
                     </p>
                   </div>
 
-                  {/* <div>
-                    <p className="font-bold ">
-                      {`Total :$`}
-                      <span className="font-thin font-sans">{`${
-                        quantity * price
-                      }`}</span>
-                    </p>
-                  </div> */}
+             
 
                   <button
-                    // href="#" 
+      
                     onClick={() => add(product)}
-                    // disabled={isDisabled}
+            
                     className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
                   >
                     <svg
