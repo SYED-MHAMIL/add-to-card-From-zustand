@@ -17,9 +17,13 @@ type action ={
 }
 
 type cardsType= {
-     cards : ProductDataType  | {}
+     cards : ProductDataType[]  | {}
 }
-
+type StoreType = {
+    products: ProductDataType[];
+    cards: ProductDataType[];
+  } & action;
+  
 
 const productData :ProductDataType []=[
     {  id : 1,

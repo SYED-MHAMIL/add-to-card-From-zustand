@@ -14,7 +14,7 @@ export default function Cards(){
    const values = Object.values(cards);
    console.log(values);
    
-   let grandTotalPrice = values.reduce(
+   const grandTotalPrice = values.reduce(
      (prevPrice, { price, quantity }) => price * quantity+ prevPrice,0
    );
  

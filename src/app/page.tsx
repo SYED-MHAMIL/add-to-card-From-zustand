@@ -7,7 +7,7 @@ import { useAddCard } from "./store/addCard-store";
 import Link from "next/link";
 
 export default function Home() {
-  const { products, addToCard, cards, increment, decrement } = useAddCard();
+  const { products, addToCard, cards } = useAddCard();
  
 
      
@@ -35,12 +35,7 @@ const add = (product) => {
   addToCard(cards);
 };
 
-  const decerementHandler = (quantity: number, id: number) => {
-    if (quantity > 1) {
-      decrement(id);
-    }
-  };
-
+ 
   
 let quanVal;
 if(values){
